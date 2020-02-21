@@ -39,9 +39,9 @@ def annotate(fileindex, ner):
                 for t, l in zip(tokens, labels):
                     if 'B-' in l:
                         idx += 1
-                        token_utils.set_annotation_for_token(sentence, t, 'NE', idx)
+                        token_utils.set_annotation_for_token(sentence, t, 'NAMED_ENTITY', idx)
                     elif 'I-' in l:
-                        token_utils.set_annotation_for_token(sentence, t, 'NE', idx)
+                        token_utils.set_annotation_for_token(sentence, t, 'NAMED_ENTITY', idx)
 
             except Exception as e:
                 print("Failed to process the text due the following error: %s" % e)
